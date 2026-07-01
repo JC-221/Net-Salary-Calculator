@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Net salaries of my Employees</title>
+    </head>
+
+    <body>
+
+        <h2 style="text-align: center;">Employee's Net Salary</h2>
+
+        <table style="border-collapse: collapse; width:60%; margin: auto;" border = "1" id = "empTable">
+            <tr>
+                <th>No.</th>
+                <th>Names</th>
+                <th>Salary (RWF)</th>
+                <th>Tax</th>
+                <th>Net Salary (RWF)</th>
+            </tr>
+
+        </table>
+
+        <script>
+            var employees = parseInt(prompt("Enter the number of employees:"));
+
+            var table = document.getElementById("empTable");
+
+            for (var i=0; i<employees; i++) {
+                var name = prompt("Enter the name of employee " + (i+1) + ":");
+                var salary = parseFloat(prompt("Enter the salary of " + name + ":"));
+
+                var tax = salary * 0.15;
+                var netSalary = salary - tax;
+
+                table.innerHTML += "<tr>" + "<td>" + (i+1) + "</td>" +
+                                    "<td>" + name + "</td>" +
+                                    "<td>" + salary + "</td>" +
+                                    "<td>" + tax + "</td>" +
+                                    "<td>" + netSalary + "</td>" +
+                                    "</tr>";
+            }
+        </script>
+    </body>
+</html>
